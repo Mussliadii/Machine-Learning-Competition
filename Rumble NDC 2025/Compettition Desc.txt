@@ -1,0 +1,69 @@
+Overview
+Welcome to Classification Rumble — Neurontara Data Clash 2025
+Can your model tell a good freshwater measurement from a fair or unknown one?
+In this skills-based Kaggle challenge you will build a classifier that predicts the quality grade assigned to individual water-quality records collected around the globe.
+
+🏆 Objective
+Predict the categorical target Data Quality (Good, Fair, Unknown, Pending Review) for each row in the test set. Submissions are ranked by macro-averaged F1 on a hidden private hold-out.
+
+🌍 Dataset at a Glance
+Theme	Examples of columns	Why it matters
+In-situ readings	Parameter Code, value_with_unit, temperature_avg, rainfall_mm, …	The raw chemical / physical measurement.
+Lab workflow	Analysis Method Code, testing_laboratory, sampling_method, validated_results	Certain methods or labs produce systematically higher (or lower) QC grades.
+Location & ecology	Latitude, Longitude, water_body_type, urban_pct, agriculture_pct, frag_index	Catchment land-use and fragmentation influence contamination risk.
+Regulatory context	analytical_program, regulatory_framework, Dataset_Source	Different agencies apply different quality criteria.
+Source: UNEP GEMS/Water Global Freshwater Quality Archive (1906-2023) by Saile (2024) + Private External Sources
+
+Evaluation
+Submissions are evaluated on macro F1-score between your predicted categorical label and the hidden ground-truth label for every record in the test set.
+
+Macro‐F1 gives equal weight to every class (Good, Fair, Unknown, Pending Review), so strong performance on the minority classes is essential for a high score.
+
+Target
+Column	What you predict	Classes
+Data Quality	Overall quality rating assigned by the domain authority to the measurement row. It is a four-class categorical variable.	Fair, Unknown, Good, Pending review
+Column-by-Column Guide (train & test)
+#	Column	Type	Unit / Allowed values	Description
+0	Latitude	float	decimal degrees	Geographic latitude of the sampling location.
+1	Longitude	float	decimal degrees	Geographic longitude of the sampling location.
+2	Station Code	object	free text	Unique identifier of the monitoring station (often country-specific).
+3	Depth	float	metres	Depth below water surface at which the sample was taken. 0.3 m indicates near-surface grab.
+4	Parameter Code	object	code	Chemical/physical parameter measured (e.g. Pb-Dis = dissolved lead, O2-Dis = dissolved O₂).
+5	Analysis Method Code	object	code	Laboratory or field procedure used.
+6	Value Flags	object	symbols such as <, >, ~	Qualifiers attached to the numeric value (e.g. “below detection limit”).
+7	Data Quality	object	{Fair, Unknown, Good, Pending review}	Target column (omitted in test).
+8	Dataset_Source	object	free text	Provenance of the row (e.g. dissolved_gas, carbon, programme name).
+9	temperature_avg	float	°C	Mean air temperature at the site’s nearest climate grid point during the sampling period.
+10	rainfall_mm	float	mm	Cumulative precipitation over the sampling period.
+11	humidity_pct	float	%	Relative humidity (0–100).
+12	pressure_hPa	float	hPa	Mean sea-level atmospheric pressure.
+13	drought_index	float	dimensionless	Standardised measure of drought severity; positive = wetter, negative = drier (e.g. SPEI).
+14	extreme_precip_days	float	days	Count of days with precipitation above the 95 th percentile in the prior year.
+15	urban_pct	float	% of 5 km cell	Fraction of urban land cover.
+16	forest_pct	float	%	Forest land cover fraction.
+17	agriculture_pct	float	%	Cropland & pasture fraction.
+18	water_pct	float	%	Inland water surface fraction.
+19	wetland_pct	float	%	Wetland fraction.
+20	grassland_pct	float	%	Natural grass/herbaceous fraction.
+21	barren_pct	float	%	Bare ground/rock fraction.
+22	frag_index	float	0–100	Landscape fragmentation index (higher = more fragmented).
+23	soil_perm	float	mm h⁻¹	Soil permeability/hydraulic conductivity estimate.
+24	ind_count	float	count	Number of industrial facilities within a 10 km radius (OpenStreetMap overlay).
+25	hg_impact	float	dimensionless	Proxy score for mercury-related industrial impact.
+26	pb_impact	float	dimensionless	Proxy score for lead-related industrial impact.
+27	ind_risk_score	float	0–100	Composite industrial pollution risk score.
+28	param_category	object	e.g. nutrient, metal, Common Ion	High-level grouping of Parameter Code.
+29	country_code	object	ISO-3	Country where the station is located.
+30	time_season	object	{2018-02-13 12:00:00 - Winter}	Meteorological season at sampling time.
+31	value_with_unit	object	text (e.g. 0.005 mg/L)	Raw reported measurement including the unit symbol.
+32	sampling_method	object	{Grab Sample, Composite Sample, Manual Sample, Automated Sample, Field Measurement}	Mode of sample collection.
+33	is_referenced_method	object	{True, False}	Whether the analysis method is accredited/standardised.
+34	water_body_type	object	{River, Lake, Reservoir, Groundwater, …}	Classified type of the monitored water body.
+35	analytical_program	object	free text	Name of the broader monitoring initiative.
+36	pollution_risk	object	{Low, Medium, High}	Expert-assigned qualitative risk tier for the site.
+37	testing_laboratory	object	free text	Facility that performed the analysis.
+38	validated_results	object	{True, False}	Indicates if the measurement passed internal QA/QC.
+39	sampling_weather	object	{Clear, Cloudy, Rain, Snow, …}	Weather during sample collection.
+40	regulatory_framework	object	free text	Standard or legal framework governing limit values (e.g. International Water Quality Standards).
+41	land_use_impact	object	{Urban Dominant, Agricultural Dominant, Forest Dominant, Mixed Land Use, …}	Dominant land-use context used for risk stratification.
+—	id (test only)	int	–	Row identifier; appears only in test.csv and in sample_submission.csv.

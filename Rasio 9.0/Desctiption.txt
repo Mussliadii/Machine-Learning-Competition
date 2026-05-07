@@ -1,0 +1,9 @@
+Overview
+Climate change is a pressing global issue, with carbon dioxide (CO₂) emissions as one of its main drivers. This competition challenges you to predict CO₂ emissions in a Southeast Asian country using historical data on emissions, air quality, transportation, and environmental factors. By applying data science, you can uncover valuable insights into how these factors shape emission trends and sustainability.
+
+Objective
+The main objective of this competition is to develop predictive models that accurately estimate daily CO₂ emissions (daily_ktCO2), represented as a continuous float value. Participants are expected to apply data science techniques to uncover patterns from historical and related variables, leading to precise and reliable predictions.
+
+Evaluation
+Root Mean Squared Error (RMSE)
+Submissions will be evaluated using RMSE (Root Mean Squared Error). The definition of RMSE follows the implementation in the scikit-learn library as stated below:

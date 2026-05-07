@@ -1,0 +1,9 @@
+Overview
+Matos Fashion merupakan sebuah startup yang tengah naik daun di dunia e-commerce fashion, sedang menghadapi tantangan dalam mengelola dan mengategorikan inventaris produk yang terus bertambah. Fokus utama mereka adalah dua jenis produk, yaitu kaos dan hoodie. Untuk meningkatkan efisiensi operasional serta mempermudah pengalaman belanja pelanggan, Matos Fashion berencana mengembangkan sistem klasifikasi produk otomatis menggunakan foto produk. Sistem ini nantinya diharapkan bisa mengategorikan produk tidak hanya berdasarkan jenisnya (seperti kaos atau hoodie), tetapi juga warnanya (merah, kuning, biru, hitam, atau putih).
+
+Tujuan Kompetisi Tujuan dari kompetisi ini adalah mengembangkan keterampilan analisis data, memperdalam pemahaman tentang teknik-teknik penambangan data, dan meningkatkan kemampuan dalam menciptakan solusi data-driven yang efektif.
+
+Klasifikasi Multi Label Klasifikasi multilabel merupakan salah satu kasus dalam machine learning di mana sebuah instance (data) dapat menjadi bagian dari beberapa kelas atau label pada saat yang bersamaan. Tidak seperti klasifikasi biner atau multikelas tradisional, di mana instance (data) ditetapkan ke hanya satu kelas/ kategori, klasifikasi multilabel memungkinkan beberapa label ditetapkan ke sebuah instance (data).
+
+Metrik Evaluasi
+Pada kompetisi ini, digunakan metrik Exact Match Ratio pada kasus klasifikasi multilabel dikarenakan metrik ini mampu mengukur seberapa akurat prediksi model dalam memprediksi semua label secara tepat untuk setiap sampel, dimana prediksi dianggap benar jika dan hanya jika semua label yang diprediksi sama persis dengan label sebenarnya. Berikut Formula dari metrik Exact Match Ratio:

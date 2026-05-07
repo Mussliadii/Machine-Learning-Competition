@@ -1,0 +1,19 @@
+Overview
+Objective Quest adalah salah satu cabang lomba dari DATAQUEST yang diselenggarakan oleh Himpunan Mahasiswa Teknologi Sains Data Fakultas Teknologi Maju dan Multidisiplin, Universitas Airlangga. Kompetisi ini merupakan platform bagi peserta untuk mengembangkan kemampuan dan meningkatkan pengalaman untuk menjadi seorang data scientist. Pada kompetisi ini, peserta diharapkan dapat mengaplikasikan pengetahuannya terkait dengan business understanding, data preprocessing, data manipulation, modelling, dan model evaluation. Dengan diselenggarakannya kompetisi ini, peserta diharapkan dapat melatih kemampuan analisis melalui proses menemukan wawasan berharga dari data serta mengaplikasikannya ke dalam suatu model machine learning ataupun deep learning.
+
+Description
+Latar Belakang
+Sistem hukum di Indonesia menganut sistem civil law, di mana undang-undang tertulis menjadi acuan utama dalam pengambilan keputusan. Namun, dalam praktiknya, putusan hakim sebelumnya (yurisprudensi) juga sering menjadi pertimbangan penting untuk menjaga konsistensi dan kepastian hukum.
+
+Menurut data dari Mahkamah Agung, jumlah dokumen putusan pengadilan di Indonesia dalam 3 bulan terakhir bertambah hingga sekitar 300.000 dokumen putusan yang berarti pertambahan hingga 100.000 dokumen tiap bulannya. Volume data yang masif ini menciptakan tantangan besar bagi para praktisi hukum. Membaca dan menganalisis setiap dokumen relevan untuk memahami tren dan konsistensi vonis pada kasus serupa adalah pekerjaan yang sangat memakan waktu dan tenaga. Hal ini menunjukkan adanya kebutuhan mendesak untuk sistem yang dapat mengolah koleksi dokumen putusan ini secara otomatis.
+
+Dalam studi kasus ini, Anda ditantang untuk membangun sebuah model machine learning yang dapat memprediksi lama hukuman penjara (dalam bulan) untuk sebuah kasus pidana, hanya berdasarkan narasi teks dari dokumen putusan tersebut.
+
+Anda akan bekerja dengan ribuan dokumen putusan pengadilan. Tugas Anda adalah memanfaatkan teknik Natural Language Processing (NLP) untuk "memahami" kompleksitas kasus, mulai dari detail tindak pidana, keterangan saksi, hingga pasal yang didakwakan dan mengubah pemahaman tersebut menjadi sebuah prediksi numerik yang akurat.
+
+Evaluation
+Submisi Anda akan dievaluasi berdasarkan metrik Root Mean Squared Error (RMSE). RMSE adalah akar kuadrat dari rata-rata selisih kuadrat antara nilai prediksi dan nilai sebenarnya.
+
+RMSE dihitung sebagai berikut:
+
+
