@@ -1,6 +1,3 @@
-<div align="center">
-  <img src="assets/banner.png" alt="ML Competition Banner" width="100%">
-
   # 🚀 AI & Machine Learning Competition Portfolio
   ### *Advanced Predictive Modeling, Computer Vision, & Natural Language Processing*
 
